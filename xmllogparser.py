@@ -224,7 +224,7 @@ def UserSearch(Username):
 def ListEvent():
 	i=0
 	EventIDList = []
-	EventIDList.append("5447")
+	#EventIDList.append("5447")
 	#print EventIDList
 	for obj in list:
 		if obj.EventID != "5447" and obj.EventID not in EventIDList:
@@ -238,6 +238,7 @@ def ListEvent():
 		arr = line.split(',')
 		if arr[0] in EventIDList:
 			print arr[0] + "\t" + arr[1].rstrip('\n')
+	print "Security.xml also includes Event ID: 5447, A Windows Filtering Platform filter has been changed"
 readlog=True
 readfile()
 readlog=False
@@ -258,3 +259,5 @@ if options.lsearch:
 	print "------------------------------------------------------------------\n" 
 	print "These are the following Event types present in the Security logs:\n"
 	ListEvent()
+	eventsearch2 = raw_input('Enter Event ID: ')
+	EventIDSearch(eventsearch2)
